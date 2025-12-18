@@ -8,16 +8,16 @@ function App() {
 
   return (
     <>
-      <Semaine className="flex gap-2 bg-red-500"/>
+      <Semaine className="min-h-screen w-full px-6 py-8 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white flex gap-4 justify-center"/>
     </>
   )
 }
 
 function Heure({ h }) {
   return (
-  <div className="flex items-start border border-black w-32 h-16">
-    <div className="w-6 flex flex-col items-center justify-start"><p>{ h }</p></div>
-    <div className="w-full h-full flex items-center bg-blue-500 p-4">une heure</div>
+  <div className="flex items-start border border-white/20 w-full h-16 px-2">
+    <div className="w-6 flex flex-col items-center justify-start text-slate-200"><p>{ h }</p></div>
+    <div className="w-full h-full flex items-center rounded-lg bg-white/10 backdrop-blur-md p-3 text-slate-100 shadow-inner hover:bg-white/15 transition-colors">une heure</div>
   </div>
 )
 }
@@ -29,12 +29,13 @@ function Jour({ j }) {
     }
 
     return (
-    <div>
-      <h3>{ j }</h3>
-      {heures}
-      <div className="flex items-start border border-black w-32"><p>20</p></div>
+    <div className="flex flex-col w-44 md:w-56 border border-white/20 rounded-xl overflow-hidden bg-white/10 backdrop-blur-md shadow-xl hover:bg-white/15 transition">
+      <h3 className="text-center font-semibold sticky top-0 bg-white/10 backdrop-blur-md p-2 text-slate-100 border-b border-white/20">{ j }</h3>
+      <div className="flex flex-col divide-y divide-white/10 overflow-y-auto">
+        {heures}
+      </div>
+      <div className="flex items-start w-full px-2"><p>20</p></div>
     </div>)
-  
 }
 
 function Semaine({ className }) {
