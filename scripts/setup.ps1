@@ -50,6 +50,7 @@ if (-not (Test-Path -LiteralPath $twConfig)) {
 
 Write-Host "[setup] Verifying Tailwind CLI..." -ForegroundColor Cyan
 npx tailwindcss -v | Out-Null
+npm install react-snowfall
 
 Write-Host "[setup] Done. You can run the dev server with: npm run dev" -ForegroundColor Green
 if ($Start) {
